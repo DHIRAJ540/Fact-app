@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>FAcT</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <h1>FAcT</h1>
+        </div>
+        <div class="hint">
+          <button data-modal-target=".hint-modal" class="hint-button">
+            <i class="far fa-question-circle"></i>
+          </button>
+        </div>
+      </nav>
+      <header>
+        <div class="heading">
+          <h2>Guess which of the following is <span>not</span> a true FAcT</h2>
+        </div>
+        <div class="scores">
+          <h3 id="new-score">Your score : <span id="new">0</span></h3>
+        </div>
+      </header>
+      <div class="main">
+        <ul class="facts">
+          <li id="a" class="fact">Lorem ipsum dolor sit amet.</li>
+          <li id="b" class="fact">Lorem ipsum dolor sit amet consectetur.</li>
+          <li id="c" class="fact">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias!
+          </li>
+          <li id="d" class="fact">
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </li>
+        </ul>
+      </div>
+      <div class="buttons">
+        <button id="prev"><i class="fas fa-arrow-left"></i>Prev</button>
+        <button id="next">Next<i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <div class="hint-modal modal">
+      <div class="title">
+        <h4>How to play ?</h4>
+        <i data-close-button class="fas fa-times"></i>
+      </div>
+      <div class="body">
+        <p>
+          Select which one you think is not a true fact and I made that up.
+          Select wisely, good luck.
+        </p>
+      </div>
+    </div>
+    <div class="overlay"></div>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

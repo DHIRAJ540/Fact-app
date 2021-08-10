@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&family=Source+Sans+Pro&display=swap");
+
+/* font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Anton', sans-serif;
+font-family: 'Anton', sans-serif; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(75, 247, 250, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 15vh;
+  width: 70%;
+
+  padding: 0 50px;
+}
+
+.hint .hint-button {
+  border: none;
+  font-size: 2em;
+  opacity: 0.6;
+  background: none;
+}
+
+.hint .hint-button i {
+  cursor: pointer;
+}
+
+/* .hint::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  background: red;
+  z-index: 14;
+} */
+
+.logo h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 2em;
+  color: #172c45;
+}
+
+header {
+  height: 10vh;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #172c45;
+  padding: 0 50px;
+}
+
+header .heading {
+  font-size: 1em;
+}
+
+header .scores {
+  color: rgba(63, 150, 253, 0.8);
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.heading span {
+  color: red;
+}
+
+.main {
+  height: 46vh;
+  width: 70%;
+  padding: 0 50px;
+}
+
+.facts {
+  list-style: none;
+}
+
+.facts li {
+  background: #e8e8e8;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 0.8em;
+  margin: 1em 0;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #172c45;
+  font-size: 1.2em;
+
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.buttons {
+  height: 5vh;
+  width: 70%;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons button {
+  background: #3f96fd;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 0.5em 1em;
+
+  border: none;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #172c45;
+  font-size: 1.2em;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.buttons button i {
+  padding: 10px;
+  color: white;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  transition: all 300ms ease-in-out;
+}
+
+.buttons button:hover {
+  background: #e8e8e8;
+}
+
+.buttons button:hover i {
+  color: #3f96fd;
+}
+
+.facts li:hover {
+  background: #acd1ff;
+}
+
+.facts .correct {
+  transition: all 200ms ease-in-out;
+  background: #35e099;
+}
+
+.facts .correct:hover {
+  background: #35e099;
+}
+
+.facts .wrong {
+  transition: all 400ms ease-in-out;
+  background: #ff00007a;
+}
+
+.facts .wrong:hover {
+  background: #ff00007a;
+}
+
+.buttons .disable {
+  transition: all 200ms ease-in-out;
+  background: #8ac0ff;
+  pointer-events: none;
+}
+
+.buttons .disable:hover {
+  background: #8ac0ff;
+}
+
+.buttons .disable:hover i {
+  color: white;
+}
+
+.hint-modal {
+  background: white;
+  position: fixed;
+  top: 20%;
+  left: 64%;
+  padding: 10px;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 15px;
+  font-family: "Source Sans Pro", sans-serif;
+  z-index: 10;
+
+  transition: all 300ms ease-in-out;
+}
+
+.hint-modal .title {
+  display: flex;
+  padding: 10px 15px;
+  font-size: 1.5em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hint-modal .title i {
+  cursor: pointer;
+}
+
+.hint-modal p {
+  font-size: 1.2em;
+  padding: 10px 15px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  transition: all 300ms ease-in-out;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.hint-modal.active {
+  transition: all 200ms ease-in-out;
+  transform: translate(-50%, -50%) scale(100%);
+}
+
+@media (max-width: 700px) {
+  header,
+  nav,
+  .main,
+  .buttons {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  nav {
+    height: 10vh;
+    margin-top: 0;
+  }
+
+  .heading {
+    font-size: 0.8em;
+  }
+
+  header {
+    margin-bottom: 10px;
+  }
+
+  .facts li {
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    border-radius: 10px;
+    font-size: 1em;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  .buttons {
+    height: 5em;
+
+    padding: 0 20px;
+  }
+
+  .buttons button {
+    font-size: 1em;
+  }
+
+  .main {
+    height: 50vh;
+    margin-top: 1em;
+  }
+
+  .hint-modal {
+    padding: 5px;
+    width: 70%;
+    left: 50%;
+  }
+}
